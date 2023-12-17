@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="1440">
+    <title>StoreShirt</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;900&family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="hero">
+            {% include "blog/section_hero.html" %}
+        </section>
+        <section class="products">
+            <div class="container">
+                <ul class="filter">
+                    <li class="filter__item filter__item--active">
+                        <a href="#" data-filter="popular" class="filter__link">Популярное</a>
+                    </li>
+                    <li class="filter__item">
+                        <a href="#" data-filter="new"class="filter__link">Новинки</a>
+                    </li>
+                    <li class="filter__item">
+                        <a href="#" data-filter="bestsellers" class="filter__link">Бестселлеры</a>
+                    </li>
+                    <li class="filter__item">
+                        <a href="#" data-filter="specials" class="filter__link">Специальные предложения</a>
+                    </li>
+                    <li class="filter__item">
+                        <a href="#" data-filter="soon" class="filter__link">Скоро в продаже</a>
+                    </li>
+                </ul>
+            </div>
+            {% include "blog/section_products.html" %}
+        </section>
+        <section class="collections">
+            {% include "blog/section_collections.html" %}
+        </section>
+        <footer class="footer">
+            {% include "blog/section_footer.html" %}
+        </footer>
+    </div>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>"
+    <script src="{% static 'js/sidebar-menu.js' %}"></script>
+    <script src="{% static 'js/fade-slider.js' %}"></script>
+    <script src="{% static 'js/filter.js' %}"></script>
+</body>
+</html>

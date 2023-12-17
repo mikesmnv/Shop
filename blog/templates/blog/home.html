@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+<h1>Список товаров</h1>
+{% for post in posts %}
+    <div>
+        <h4>{{ post.title }}</h4>
+        <div> <img src="{{ post.photo.url }}" alt="{{ post.title }}"></div>
+        <div>{{ post.content }}</div>
+        <div>Цена: {{ post.price }}</div>
+    </div>
+    <hr>
+{% endfor %}
+<div style="display: inline">
+{% if next_page %}
+    <a href="?page={{ next_page }}">{{ next_page }}</a>
+{% endif %}
+<div> Страница: {{ current_page }} </div>
+{% if previos_page %}
+    <a href="?page={{ previos_page }}">{{ previos_page }}</a>
+{% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+
+
+<ul class="products__list">
+    {% for item in items %}
+    <li class="products__item new bestsellers popular specials soon">
+        <div class="products__price">
+            <div class="products__price-amount"> {{ item.price }} </div>
+        </div>
+        <div class="products__content">
+            <img src="{{ item.photo.url }}" alt="{{ post.title }}" class="products__images">
+            <div class="products__desc">
+                <div class="products__desc-text">
+                    {{ item.content }}
+                </div>
+                <a href="" class="btn">Подробнее</a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
